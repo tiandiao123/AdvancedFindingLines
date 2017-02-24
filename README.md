@@ -1,6 +1,7 @@
 Author:Cuiqing Li
 
 Time: 2/24/2017
+
 **Advanced Lane Finding Project**
 
 The goals / steps of this project are the following:

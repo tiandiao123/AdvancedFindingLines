@@ -1,1 +1,5 @@
-Please save your output images to this folder and include a description in your README of what each image shows.
+Description of The pictures:
+
+originalroad.png: There are two figures in this picture. The first one is the original picture, and the second one is the picture which is undistorted!
+
+warpedimage.png: There are two figures in this photo. The first one is the original picture, and the second one is the picture which is waarped so that we can detect lanes of the road!
