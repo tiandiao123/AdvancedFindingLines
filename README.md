@@ -94,9 +94,6 @@ Also, here is the fitting polynomials for the lane lines in the picture:
 
 ![png](output_images/lanelines.png)
 
-Then I did some other stuff and fit my lane lines with a 2nd order polynomial kinda like this:
-
-![alt text][image5]
 
 ####5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
@@ -114,7 +111,7 @@ I implemented this step in lines # through # in my code in `yet_another_file.py`
 
 ####1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
 
-Here's a [link to my video result](./project_video.mp4)
+Here's a [link to my video result](./result.mp4)
 
 ---
 
@@ -122,4 +119,4 @@ Here's a [link to my video result](./project_video.mp4)
 
 ####1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+The most challenging problems I am faced with is that I need to compute fitting polynomials of the lane lines. Since I need to try many times to see how the implemented functions applies to many kinds of pictures in this case. If it is not the case, I need to change parameters so that my functions such as process_image can be applied to all the photos in this project! 
