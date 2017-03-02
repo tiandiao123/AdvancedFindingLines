@@ -16,7 +16,7 @@ The goals / steps of this project are the following:
 * Output visual display of the lane boundaries and numerical estimation of lane curvature and vehicle position.
 
 ### Here is my final result:
-![gif](result.gif)
+![gif](result_demo.gif)
 [//]: # (Image References)
 
 [image1]: ./examples/undistort_output.png "Undistorted"
