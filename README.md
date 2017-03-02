@@ -82,11 +82,17 @@ This resulted in the following source and destination points:
 | 1127, 720     | 960, 720      |
 | 695, 460      | 960, 0        |
 
-I verified that my perspective transform was working as expected by drawing the `src` and `dst` points onto a test image and its warped counterpart to verify that the lines appear parallel in the warped image.
 
-![alt text][image4]
 
-####4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
+####2. Edge Detection and Finding Fitting Polynomials:
+Then, I need to use edge detection skills and sobel algorithms to compute edges' locations of the warped funstions. After that, based on the binary pictures I get, I can use the implemented algorithms to find the fitting polynomials for the lane lines!
+Here is a demo for the polynomials I found with respect to one of pictures in the examples fold:
+Look, here is the edge detection using sobel algorithms!
+
+![png](output_images/edge.png)
+Also, here is the fitting polynomials for the lane lines in the picture:
+
+![png](output_images/lanelines.png)
 
 Then I did some other stuff and fit my lane lines with a 2nd order polynomial kinda like this:
 
