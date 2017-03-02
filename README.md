@@ -54,7 +54,7 @@ Here is a demo:
 ###Pipeline (single images)
 
 ####1. Perspective Transform:
-After getting information above, then we can create our pipeline and process_image functions to find lane lines of photos! Thus, we need to get eye-view of pictures so that we can comupute fitting polynomials functions in the next steps. As for transform original pictures into eye-view pictures, we need to use 'cv2.getPerspectiveTransform' and 'cv2.warpPerspective' to transform them! Here are few demos:
+After getting information above, then we can create our pipeline and process_image functions to find lane lines of photos! Thus, we need to get eye-view of pictures so that we can compute fitting polynomials functions in the next steps. As for transform original pictures into eye-view pictures, we need to use 'cv2.getPerspectiveTransform' and 'cv2.warpPerspective' to transform them! Here are few demos:
 
 ![png](output_images/warpedimage.png)
 
@@ -85,11 +85,12 @@ This resulted in the following source and destination points:
 
 
 ####2. Edge Detection and Finding Fitting Polynomials:
-Then, I need to use edge detection skills and sobel algorithms to compute edges' locations of the warped funstions. After that, based on the binary pictures I get, I can use the implemented algorithms to find the fitting polynomials for the lane lines!
+Then, I need to use edge detection skills and sobel algorithms to compute edges' locations of the warped pictures. After that, based on the binary pictures I get, I can use the implemented algorithms to find the fitting polynomials for the lane lines!
 Here is a demo for the polynomials I found with respect to one of pictures in the examples fold:
 Look, here is the edge detection using sobel algorithms!
 
 ![png](output_images/edge.png)
+
 Also, here is the fitting polynomials for the lane lines in the picture:
 
 ![png](output_images/lanelines.png)
