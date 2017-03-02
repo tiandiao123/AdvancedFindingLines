@@ -47,17 +47,16 @@ I then used the output `objpoints` and `imgpoints` to compute the camera calibra
 ### undistort pictures:
 In this step, I need to compute a matrix so that I can undistort any photo taken from the front camera by the cars! Based on imagepoints and objpoints I collected, I can use 'cv2.undistort' functions to ndistort any picture taken by the car!
 Here is a demo:
+
 ![png](output_images/originalroad.png)
 
 
 ###Pipeline (single images)
 
-####1. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
-I used a combination of color and gradient thresholds to generate a binary image (thresholding steps at lines # through # in `another_file.py`).  Here's an example of my output for this step.  (note: this is not actually from one of the test images)
+####1. Perspective Transform:
+After getting information above, then we can create our pipeline and process_image functions to find lane lines of photos! Thus, we need to get eye-view of pictures so that we can comupute fitting polynomials functions in the next steps. As for transform original pictures into eye-view pictures, we need to use 'cv2.getPerspectiveTransform' and 'cv2.warpPerspective' to transform them! Here are few demos:
 
-![alt text][image3]
-
-####3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
+![png](output_images/warpedimage.png)
 
 The code for my perspective transform includes a function called `warper()`, which appears in lines 1 through 8 in the file `example.py` (output_images/examples/example.py) (or, for example, in the 3rd code cell of the IPython notebook).  The `warper()` function takes as inputs an image (`img`), as well as source (`src`) and destination (`dst`) points.  I chose the hardcode the source and destination points in the following manner:
 
