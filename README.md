@@ -16,7 +16,7 @@ The goals / steps of this project are the following:
 * Output visual display of the lane boundaries and numerical estimation of lane curvature and vehicle position.
 
 ### Here is my final result:
-![gif](result_demo.gif)
+![gif](result_test.gif)
 [//]: # (Image References)
 
 [image1]: ./examples/undistort_output.png "Undistorted"
@@ -122,4 +122,4 @@ Here's a [link to my video result](./result.mp4)
 
 ####1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
-The most challenging problems I am faced with is that I need to compute fitting polynomials of the lane lines. Since I need to try many times to see how the implemented functions applies to many kinds of pictures in this case. If it is not the case, I need to change parameters so that my functions such as process_image can be applied to all the photos in this project! 
+The most challenging problems I am faced with is that I need to compute fitting polynomials of the lane lines. Since I need to try many times to see how the implemented functions applies to many kinds of pictures in this case. If it is not the case, I need to change parameters so that my functions such as process_image can be applied to all the photos in this project! As for my pipeline's modification, I updated the implementation of this function. Originally, I used sobel algorithm to catch lane lines of the warped pictures, but it turns out that the result is not well! The reason is that the sobel algorithm doesn't work very well when there is some shadow on the picture. However, after transforming color of the picture into HLS characteristics, and then I found that set appropriate thresh hold values, I can catch the lane lines very well even for the picture having shadow!
