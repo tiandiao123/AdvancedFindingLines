@@ -31,7 +31,7 @@ The goals / steps of this project are the following:
 First of all, I used OpenCV, Python3, Numpy and Matplotlib to finish this project. More details are the following: 
 
 You're reading it!
-###Camera Calibration
+### Camera Calibration
 
 #### First of all, I used the OpenCV functions `findChessboardCorners` and `drawChessboardCorners` to identify corners of multiple chessboards. After that, I used objpoints and imgpoints to record the locations of the corners and the actual points so that I can calibrate cameras in the next few steps! 
 
@@ -51,7 +51,7 @@ Here is a demo:
 ![png](output_images/originalroad.png)
 
 
-###Pipeline (single images)
+### Pipeline (single images)
 
 ####1. Perspective Transform:
 After getting information above, then we can create our pipeline and process_image functions to find lane lines of photos! Thus, we need to get eye-view of pictures so that we can compute fitting polynomials functions in the next steps. As for transform original pictures into eye-view pictures, we need to use 'cv2.getPerspectiveTransform' and 'cv2.warpPerspective' to transform them! Here are few demos:
@@ -84,7 +84,7 @@ This resulted in the following source and destination points:
 
 
 
-####2. Edge Detection and Finding Fitting Polynomials:
+#### 2. Edge Detection and Finding Fitting Polynomials:
 Then, I need to use edge detection skills and sobel algorithms to compute edges' locations of the warped pictures. After that, based on the binary pictures I get, I can use the implemented algorithms to find the fitting polynomials for the lane lines!
 Here is a demo for the polynomials I found with respect to one of pictures in the examples fold:
 Look, here is the edge detection using sobel algorithms!
@@ -96,7 +96,7 @@ Also, here is the fitting polynomials for the lane lines in the picture:
 ![png](output_images/lanelines.png)
 
 
-####3 Curvature Finding:
+#### 3 Curvature Finding:
 
 I used the following codes to calculate curvature:
 ```
@@ -110,7 +110,7 @@ I used the following codes to calculate curvature:
     right_curverad = ((1 + (2*right_fit_cr[0]*np.max(lefty) + right_fit_cr[1])**2)**1.5)/np.absolute(2*right_fit_cr[0])    
 ```
 
-###Pipeline (video)
+### Pipeline (video)
 
 ####1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
 
@@ -118,8 +118,8 @@ Here's a [link to my video result](./result.mp4)
 
 ---
 
-###Discussion
+### Discussion
 
-####1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
+#### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
 The most challenging problems I am faced with is that I need to compute fitting polynomials of the lane lines. Since I need to try many times to see how the implemented functions applies to many kinds of pictures in this case. If it is not the case, I need to change parameters so that my functions such as process_image can be applied to all the photos in this project! As for my pipeline's modification, I updated the implementation of this function. Originally, I used sobel algorithm to catch lane lines of the warped pictures, but it turns out that the result is not well! The reason is that the sobel algorithm doesn't work very well when there is some shadow on the picture. However, after transforming color of the picture into HLS characteristics, and then I found that set appropriate thresh hold values, I can catch the lane lines very well even for the picture having shadow!
